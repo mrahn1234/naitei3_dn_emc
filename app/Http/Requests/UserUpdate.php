@@ -33,4 +33,3 @@ class UserUpdate extends FormRequest
         ];
     }
 }
-
