@@ -20,3 +20,9 @@ Route::get('/', function () {
 Route::group(['prefix'=>'admin-page'],function(){
     Route::get('/', 'AdminHomeController@index');
 });
+
+Route::namespace('Client')->group(function() {
+    Route::post('/','ClientRegisterController@register')->name('register');
+    Route::get('/logout', 'Session@logout')->name('logout');
+    Route::post('/login', 'Session@login')->name('login');
+});

@@ -20,14 +20,27 @@
                     <li class="text-center border-right text-white">
                         <i class="fas fa-phone mr-2"></i> 001 234 5678
                     </li>
-                    <li class="text-center border-right text-white">
-                        <a href="#" data-toggle="modal" data-target="#exampleModal" class="text-white">
-                            <i class="fas fa-sign-in-alt mr-2"></i> Log In </a>
-                    </li>
-                    <li class="text-center text-white">
-                        <a href="#" data-toggle="modal" data-target="#exampleModal2" class="text-white">
-                            <i class="fas fa-sign-out-alt mr-2"></i>Register </a>
-                    </li>
+                    @guest
+                        @if (Route::has('login'))
+                        <li class="text-center border-right text-white">
+                            <a href="#" data-toggle="modal" data-target="#exampleModal" class="text-white">
+                                <i class="fas fa-sign-in-alt mr-2"></i> {{ trans('login.login') }} </a>
+                        </li>
+                        @endif
+                        @if (Route::has('register'))
+                            <li class="text-center text-white">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="text-white">
+                                    <i class="fas fa-user-plus mr-2"></i>{{ trans('register.register') }} </a>
+                            </li>
+                        @endif
+                    @endguest
+                    @if (Auth::check())
+                        <li class="text-center text-white">
+                            <a href="{{route('logout')}}" class="text-white">
+                                <i class="fas fa-sign-out-alt mr-2"></i>{{ trans('register.logout') }} </a>
+                        </li>
+                    @endif
+
                 </ul>
                 <!-- //header lists -->
             </div>

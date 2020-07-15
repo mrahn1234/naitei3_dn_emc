@@ -8,8 +8,21 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+            @if (count($errors) >0)
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li class="text-danger"> {{ $error }}</li>
+                    @endforeach
+                </ul>
+                @endif
+
+                @if (session('status'))
+                <ul>
+                    <li class="text-danger"> {{ session('status') }}</li>
+                </ul>
+            @endif
             <div class="modal-body">
-                <form action="" method="post">
+                <form action="{{ route('register') }}" method="post">
                     @csrf
                     <div class="form-group">
                         <label class="col-form-label">{{ trans('register.name') }}</label>
