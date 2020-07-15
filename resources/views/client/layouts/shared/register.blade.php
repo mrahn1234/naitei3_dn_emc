@@ -40,9 +40,8 @@
 
                         @error('username')
                             <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
+                                <strong>{{ $message }}</strong>
                             </span>
-
                         @enderror
                     </div>
                     <div class="form-group">

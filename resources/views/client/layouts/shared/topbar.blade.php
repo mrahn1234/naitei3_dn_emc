@@ -36,6 +36,11 @@
                     @endguest
                     @if (Auth::check())
                         <li class="text-center text-white">
+                        <a class="text-white" href="{{route('users.detail', Auth::user()->id)}}">
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>{{Auth::user()->name}}
+                            </a>
+                        </li>
+                        <li class="text-center text-white">
                             <a href="{{route('logout')}}" class="text-white">
                                 <i class="fas fa-sign-out-alt mr-2"></i>{{ trans('register.logout') }} </a>
                         </li>

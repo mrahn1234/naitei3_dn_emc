@@ -21,7 +21,11 @@ Route::namespace('Client')->group(function() {
     Route::post('/','ClientRegisterController@register')->name('register');
     Route::get('/logout', 'Session@logout')->name('logout');
     Route::post('/login', 'Session@login')->name('login');
-Route::get('/home', 'HomeController@index')->name('home');
 });
 
 Route::get('/', 'ClientHomeController@index')->name('home');
+
+
+Route::get('users/{user}/detail',  ['as' => 'users.detail', 'uses' => 'UserController@show']);
+Route::patch('users/{user}',  ['as' => 'users.update', 'uses' => 'UserController@update']);
+
