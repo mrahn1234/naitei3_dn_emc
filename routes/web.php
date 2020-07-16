@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('client.layouts.index');
 });
+
+Route::group(['prefix'=>'admin-page'],function(){
+    Route::get('/', 'AdminHomeController@index');
+});
