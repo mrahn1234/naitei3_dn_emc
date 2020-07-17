@@ -4,11 +4,10 @@
             <img src="{{asset('client/images/m3.jpg')}}" alt="">
             <div class="men-cart-pro">
                 <div class="inner-men-cart-pro">
-                    <a href="single.html" class="link-product-add-cart">{{trans('product.quick-view')}}</a>
+                    <a href="{{route('product_detail', $product->id)}}" class="link-product-add-cart">{{trans('product.quick-view')}}</a>
                 </div>
             </div>
             <span class="product-new-top">{{trans('product.new')}}</span>
-
         </div>
         <div class="item-info-product text-center border-top mt-4">
             <h4 class="pt-1">
@@ -16,7 +15,6 @@
             </h4>
             <div class="info-product-price my-2">
                 <span class="item_price">{{"$".$product->price."0"}}</span>
-                <del>{{"$".($product->price + rand(500,2000))}}</del>
             </div>
             <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                 <form action="#" method="post">
