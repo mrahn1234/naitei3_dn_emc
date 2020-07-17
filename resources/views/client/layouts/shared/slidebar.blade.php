@@ -13,23 +13,18 @@
             <h3 class="agileits-sear-head mb-3">Price</h3>
             <div class="w3l-range">
                 <ul>
+                    {{-- cho nay su dung jquery post price ve server --}}
                     <li>
-                        <a href="#">Under $1,000</a>
-                    </li>
-                    <li class="my-1">
-                        <a href="#">$1,000 - $5,000</a>
+                        <a href="{{route('pro_accord_price', ['parameter' => 999])}}" class="price-product" >Under $1,000</a>
                     </li>
                     <li>
-                        <a href="#">$5,000 - $10,000</a>
-                    </li>
-                    <li class="my-1">
-                        <a href="#">$10,000 - $20,000</a>
+                        <a href="{{route('pro_accord_price', ['parameter' => 1000])}}" class="price-product">$1,000 - $5,000</a>
                     </li>
                     <li>
-                        <a href="#">$20,000 $30,000</a>
+                        <a href="{{route('pro_accord_price', ['parameter' => 5000])}}" class="price-product">$5,000 - $10,000</a>
                     </li>
-                    <li class="mt-1">
-                        <a href="#">Over $30,000</a>
+                    <li>
+                        <a href="{{route('pro_accord_price', ['parameter' => 10001])}}" class="price-product">Over $10,000</a>
                     </li>
                 </ul>
             </div>
@@ -41,14 +36,6 @@
             <ul>
                 <li>
                     <input type="checkbox" class="checked">
-                    <span class="span">5% or More</span>
-                </li>
-                <li>
-                    <input type="checkbox" class="checked">
-                    <span class="span">10% or More</span>
-                </li>
-                <li>
-                    <input type="checkbox" class="checked">
                     <span class="span">20% or More</span>
                 </li>
                 <li>
@@ -58,10 +45,6 @@
                 <li>
                     <input type="checkbox" class="checked">
                     <span class="span">50% or More</span>
-                </li>
-                <li>
-                    <input type="checkbox" class="checked">
-                    <span class="span">60% or More</span>
                 </li>
             </ul>
         </div>
@@ -118,75 +101,18 @@
         </div>
         <!-- //reviews -->
         <!-- electronics -->
-        <div class="left-side border-bottom py-2">
-            <h3 class="agileits-sear-head mb-3">Electronics</h3>
-            <ul>
-                <li>
-                    <input type="checkbox" class="checked">
-                    <span class="span">Accessories</span>
-                </li>
-                <li>
-                    <input type="checkbox" class="checked">
-                    <span class="span">Cameras & Photography</span>
-                </li>
-                <li>
-                    <input type="checkbox" class="checked">
-                    <span class="span">Car & Vehicle Electronics</span>
-                </li>
-                <li>
-                    <input type="checkbox" class="checked">
-                    <span class="span">Computers & Accessories</span>
-                </li>
-                <li>
-                    <input type="checkbox" class="checked">
-                    <span class="span">GPS & Accessories</span>
-                </li>
-                <li>
-                    <input type="checkbox" class="checked">
-                    <span class="span">Headphones</span>
-                </li>
-                <li>
-                    <input type="checkbox" class="checked">
-                    <span class="span">Home Audio</span>
-                </li>
-                <li>
-                    <input type="checkbox" class="checked">
-                    <span class="span">Home Theater, TV & Video</span>
-                </li>
-                <li>
-                    <input type="checkbox" class="checked">
-                    <span class="span">Mobiles & Accessories</span>
-                </li>
-                <li>
-                    <input type="checkbox" class="checked">
-                    <span class="span">Portable Media Players</span>
-                </li>
-                <li>
-                    <input type="checkbox" class="checked">
-                    <span class="span">Tablets</span>
-                </li>
-                <li>
-                    <input type="checkbox" class="checked">
-                    <span class="span">Telephones & Accessories</span>
-                </li>
-                <li>
-                    <input type="checkbox" class="checked">
-                    <span class="span">Wearable Technology</span>
-                </li>
-            </ul>
-        </div>
+        @if (isset($parent_cate))
+            <div class="left-side border-bottom py-2">
+                <a href="{{route('pro_accord_cate', $parent_cate->id)}}">
+                    <h3 class="agileits-sear-head mb-3">{{isset($parent_cate)? $parent_cate->name : ""}}</h3>
+                </a>
+                <ul>
+                    @each('client.categories.category_item_slidebar', $parent_cate->children()->get(), 'children_cate')
+                </ul>
+            </div>
+        @endif
+
         <!-- //electronics -->
-        <!-- delivery -->
-        <div class="left-side border-bottom py-2">
-            <h3 class="agileits-sear-head mb-3">Cash On Delivery</h3>
-            <ul>
-                <li>
-                    <input type="checkbox" class="checked">
-                    <span class="span">Eligible for Cash On Delivery</span>
-                </li>
-            </ul>
-        </div>
-        <!-- //delivery -->
         <!-- arrivals -->
         <div class="left-side border-bottom py-2">
             <h3 class="agileits-sear-head mb-3">New Arrivals</h3>
@@ -207,33 +133,17 @@
             <h3 class="agileits-sear-head mb-3">Best Seller</h3>
             <div class="box-scroll">
                 <div class="scroll">
-                    <div class="row">
-                        <div class="col-lg-3 col-sm-2 col-3 left-mar">
-                            <img src="{{asset('client/images/k1.jpg')}}" alt="" class="img-fluid">
+                    @foreach (Helper::best_seller() as $bs)
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-2 col-3 left-mar">
+                                <img src="{{asset('client/images/k1.jpg')}}" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-lg-9 col-sm-10 col-9 w3_mvd">
+                                <a href="">{{$bs->name."(".substr($bs->description, 0, 20).")"}}</a>
+                                <a href="" class="price-mar mt-2">${{$bs->price}}</a>
+                            </div>
                         </div>
-                        <div class="col-lg-9 col-sm-10 col-9 w3_mvd">
-                            <a href="">Samsung Galaxy On7 Prime (Gold, 4GB RAM + 64GB Memory)</a>
-                            <a href="" class="price-mar mt-2">$12,990.00</a>
-                        </div>
-                    </div>
-                    <div class="row my-4">
-                        <div class="col-lg-3 col-sm-2 col-3 left-mar">
-                            <img src="{{asset('client/images/k2.jpg')}}" alt="" class="img-fluid">
-                        </div>
-                        <div class="col-lg-9 col-sm-10 col-9 w3_mvd">
-                            <a href="">Haier 195 L 4 Star Direct-Cool Single Door Refrigerator</a>
-                            <a href="" class="price-mar mt-2">$12,499.00</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-3 col-sm-2 col-3 left-mar">
-                            <img src="{{asset('client/images/k3.jpg')}}" alt="" class="img-fluid">
-                        </div>
-                        <div class="col-lg-9 col-sm-10 col-9 w3_mvd">
-                            <a href="">Ambrane 13000 mAh Power Bank (P-1310 Premium)</a>
-                            <a href="" class="price-mar mt-2">$1,199.00 </a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

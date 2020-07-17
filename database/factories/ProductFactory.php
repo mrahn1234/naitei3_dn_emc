@@ -12,10 +12,10 @@ $factory->define(Product::class, function () {
     return [
         'name' => $GLOBALS['faker']->productName,
         'description' => $GLOBALS['faker']->text,
-        'price' => rand(100,1000)/10,
+        'price' => rand(1000,100000)/10,
         'image' => 'default.png',
-        'bought' => 0,
+        'bought' => rand(1,100),
         'quantity' => 100,
-        'trend_count' => 0,
+        'trend_count' => rand(1,100),
     ];
 });
