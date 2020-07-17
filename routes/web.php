@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('client.layouts.shared.home');
+})->name('home');
+
+Route::group(['prefix'=>'admin-page'],function(){
+    Route::get('/', 'AdminHomeController@index');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
