@@ -44,3 +44,9 @@ Route::group(['prefix' => 'products'], function(){
 });
 
 /* Client*/
+Route::get('/', 'ClientHomeController@index')->name('home');
+
+Route::get('users/{user}/detail', 'UserController@show')->name('users.detail');
+Route::patch('users/{user}', 'UserController@update')->name('users.update');
+Route::get('/changePassword','UserController@showChangePassword');
+Route::post('/changePassword', 'UserController@changePassword')->name('changePassword');

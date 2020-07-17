@@ -21,7 +21,7 @@ class Session extends Controller
         }
         else
         {
-            return redirect()->back()->withErrors(['message', 'Wrong username or password']);
+            return redirect()->back()->withErrors(['Wrong username or password']);
         }
     }
 
