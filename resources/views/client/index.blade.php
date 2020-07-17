@@ -3,29 +3,19 @@
 
 <head>
     <title>Ecommerce Website</title>
+    <link rel="icon" href="{{asset('client/images/logo2.png')}}">
     <!-- //Meta tag Keywords -->
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-	<!-- Custom-Files -->
-	<link href="{{asset('client/css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
-	<!-- Bootstrap css -->
-	<link href="{{asset('client/css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
-	<!-- Main css -->
-	<link rel="stylesheet" href="{{asset('client/css/fontawesome-all.css')}}">
-	<!-- Font-Awesome-Icons-CSS -->
-	<link href="{{asset('client/css/popuo-box.css')}}" rel="stylesheet" type="text/css" media="all" />
-	<!-- pop-up-box -->
-	<link href="{{asset('client/css/menu.css')}}" rel="stylesheet" type="text/css" media="all" />
-	<!-- menu style -->
-	<!-- //Custom-Files -->
-
+	<!-- Css & BS -->
+    <link rel="stylesheet" href="{{mix('client/css/client.css')}}" type="text/css">
+    <!-- //Css & BS -->
 	<!-- web fonts -->
 	<link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
 	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
 	    rel="stylesheet">
 	<!-- //web fonts -->
 </head>
-
 <body>
 
     <!-- top-header -->
@@ -99,31 +89,35 @@
     <!-- //jquery -->
 
     <!-- popup modal (for location)-->
-    <script src="j{{asset('client/s/jquery.magnific-popup.js')}}"></script>
+    <script src="{{mix('client/js/jquery.magnific-popup.js')}}"></script>
     <!-- //popup modal (for location)-->
 
     <!-- cart-js -->
-    <script src="{{asset('client/js/minicart.js')}}"></script>
+    <script src="{{mix('client/js/minicart.js')}}"></script>
     <!-- //cart-js -->
 
     <!-- scroll seller -->
-    <script src="{{asset('client/js/scroll.js')}}"></script>
+    <script src="{{mix('client/js/scroll.js')}}"></script>
     <!-- //scroll seller -->
 
     <!-- smoothscroll -->
-    <script src="{{asset('client/js/SmoothScroll.min.js')}}"></script>
+    <script src="{{mix('client/js/SmoothScroll.min.js')}}"></script>
     <!-- //smoothscroll -->
 
     <!-- start-smooth-scrolling -->
-    <script src="{{asset('client/js/move-top.js')}}"></script>
-    <script src="{{asset('client/js/easing.js')}}"></script>
+    <script src="{{mix('client/js/move-top.js')}}"></script>
+    <script src="{{mix('client/js/easing.js')}}"></script>
     <!-- //end-smooth-scrolling -->
+
+
 
     <!-- for bootstrap working -->
     <script src="{{asset('client/js/bootstrap.js')}}"></script>
-    <script src="{{asset('client/js/preprocess.js')}}"></script>
     <!-- //for bootstrap working -->
-    <!-- //js-files -->
+
+    <!-- custom js -->
+    <script src="{{mix('client/js/preprocess.js')}}"></script>
+    <!-- //custom js -->
 </body>
 
 </html>

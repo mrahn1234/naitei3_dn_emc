@@ -1,4 +1,19 @@
 {
+    "/client/js/SmoothScroll.min.js": "/client/js/SmoothScroll.min.js",
+    "/client/js/creditly.js": "/client/js/creditly.js",
+    "/client/js/creditly2.js": "/client/js/creditly2.js",
+    "/client/js/easing.js": "/client/js/easing.js",
+    "/client/js/easyResponsiveTabs.js": "/client/js/easyResponsiveTabs.js",
+    "/client/js/imagezoom.js": "/client/js/imagezoom.js",
+    "/client/js/jquery.flexslider.js": "/client/js/jquery.flexslider.js",
+    "/client/js/jquery.magnific-popup.js": "/client/js/jquery.magnific-popup.js",
+    "/client/js/minicart.js": "/client/js/minicart.js",
+    "/client/js/move-top.js": "/client/js/move-top.js",
+    "/client/js/preprocess.js": "/client/js/preprocess.js",
+    "/client/js/scroll.js": "/client/js/scroll.js",
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/admin/js/admin.js": "/admin/js/admin.js",
+    "/client/css/client.css": "/client/css/client.css",
+    "/admin/css/admin.css": "/admin/css/admin.css"
 }

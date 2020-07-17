@@ -5,6 +5,9 @@
 /public/client
 /resources/admin
 /resources/client
+/app/Providers/TelescopeServiceProvider.php
+/public/vendor/
+/config/telescope.php
 /storage/*.key
 /vendor
 .env

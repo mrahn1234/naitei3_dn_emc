@@ -15,9 +15,11 @@ class ProductCategoryTableSeeder extends Seeder
         $products = App\Models\Product::all();
         $categories = App\Models\Category::all();
 
+        //chua loai tru main category
+
         foreach ($products as $product){
             $product->categories()->attach(
-                $categories->random(rand(1,3))->pluck('id')->toArray()
+                $categories->random(rand(1, 4))->pluck('id')->toArray()
             );
         }
     }
