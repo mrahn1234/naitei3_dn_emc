@@ -281,3 +281,13 @@
 </div>
 
 @endsection
+
+@section('footer')
+    @if($errors->any())
+    <script>
+        $(document).ready(function() {
+            $('#exampleModal').modal('show');
+        })
+    </script>
+    @endif
+@endsection

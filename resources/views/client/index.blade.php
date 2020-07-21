@@ -4,7 +4,8 @@
 <head>
     <title>Ecommerce Website</title>
     <!-- //Meta tag Keywords -->
-
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 	<!-- Custom-Files -->
 	<link href="{{asset('client/css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
 	<!-- Bootstrap css -->

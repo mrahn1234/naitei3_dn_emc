@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
@@ -8,8 +8,9 @@ use App\Http\Requests\Register;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
-
-class RegisterController extends Controller
+use Illuminate\Support\Facades\Response;
+use Illuminate\Auth\Events\Registered;
+class ClientRegisterController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -29,8 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
+    protected $redirectTo = '/';
     /**
      * Create a new controller instance.
      *
@@ -47,7 +47,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
-    protected function create(Register $data)
+    protected function create(array $data)
     {
         return User::create([
             'name' => $data['name'],
@@ -55,5 +55,19 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+    public function register(Register $request)
+    {
+        event(new Registered($user = $this->create($request->all())));
+
+        $this->guard()->login($user);
+
+        if ($response = $this->registered($request, $user)) {
+            return $response;
+        }
+
+        return $request->wantsJson()
+                    ? new Response('', 201)
+                    : redirect($this->redirectPath());
     }
 }
