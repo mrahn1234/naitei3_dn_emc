@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('client.layouts.shared.home');
-})->name('home');
-
 Route::group(['prefix'=>'admin-page'],function(){
     Route::get('/', 'AdminHomeController@index');
 });
@@ -25,4 +21,7 @@ Route::namespace('Client')->group(function() {
     Route::post('/','ClientRegisterController@register')->name('register');
     Route::get('/logout', 'Session@logout')->name('logout');
     Route::post('/login', 'Session@login')->name('login');
+Route::get('/home', 'HomeController@index')->name('home');
 });
+
+Route::get('/', 'ClientHomeController@index')->name('home');

@@ -29,7 +29,13 @@ class CategoriesTableSeeder extends Seeder
                 'Male' => ['T-shirt', 'Oversize t-shit', 'Jacket', 'Jean'],
                 'Female' => ['Dress', 'Baggy', 'Cardigan'],
                 'Bag & accessories' => ['Backpack', 'Hat', 'Necklace'],
-                'Shoes' => ['Sneaker', 'Sandal'],
+                'Shoes' => [
+                    'Sneaker' => [
+                        "Adidas" => ['Running', 'Basketball', 'Footbal', 'Tennis'],
+                        "Nike",
+                    ],
+                    'Sandal' => ["Bitis", "Vinagiay"]
+                ],
             ],
             'Vehicle' => [
                 'Bicycle',
