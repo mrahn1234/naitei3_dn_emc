@@ -14,7 +14,12 @@
 	<link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
 	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
 	    rel="stylesheet">
-	<!-- //web fonts -->
+    <!-- //web fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 </head>
 <body>
 
@@ -94,10 +99,6 @@
     <script src="{{mix('client/js/jquery.magnific-popup.js')}}"></script>
     <!-- //popup modal (for location)-->
 
-    <!-- cart-js -->
-    <script src="{{mix('client/js/minicart.js')}}"></script>
-    <!-- //cart-js -->
-
     <!-- scroll seller -->
     <script src="{{mix('client/js/scroll.js')}}"></script>
     <!-- //scroll seller -->
@@ -117,8 +118,12 @@
     <script src="{{asset('client/js/bootstrap.js')}}"></script>
     <!-- //for bootstrap working -->
 
+    <!-- pre-process -->
+    <script src="{{asset('client/js/preprocess.js')}}"></script>
+    <!-- //pre-process -->
+
     <!-- custom js -->
-    <script src="{{mix('client/js/preprocess.js')}}"></script>
+    <script src={{mix('client/js/add_to_cart.js')}}></script>
     <!-- //custom js -->
 </body>
 

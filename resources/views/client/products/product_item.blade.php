@@ -8,7 +8,6 @@
                 </div>
             </div>
             <span class="product-new-top">New</span>
-
         </div>
         <div class="item-info-product text-center border-top mt-4">
             <h4 class="pt-1">
@@ -19,20 +18,7 @@
                 <del>{{"$".($product->price + rand(500,2000))}}</del>
             </div>
             <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                <form action="#" method="post">
-                    <fieldset>
-                        <input type="hidden" name="cmd" value="_cart" />
-                        <input type="hidden" name="add" value="1" />
-                        <input type="hidden" name="business" value=" " />
-                        <input type="hidden" name="item_name" value="Apple iPhone X" />
-                        <input type="hidden" name="amount" value="280.00" />
-                        <input type="hidden" name="discount_amount" value="1.00" />
-                        <input type="hidden" name="currency_code" value="USD" />
-                        <input type="hidden" name="return" value=" " />
-                        <input type="hidden" name="cancel_return" value=" " />
-                        <input type="submit" name="submit" value="Add to cart" class="button btn" />
-                    </fieldset>
-                </form>
+                <input type="button" onclick="addTocart({{$product->id}})" name="add_to_cart" value="Add to cart" class="button btn add_to_cart" />
             </div>
         </div>
     </div>

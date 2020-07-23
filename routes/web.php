@@ -47,4 +47,9 @@ Route::group(['prefix' => 'products'], function(){
     Route::get('/{product}', 'ProductController@show')->name('product_detail');
 });
 
+Route::group(['prefix' => 'order'], function(){
+    Route::post('/order-item', 'OrderController@orderItem')->name('order_item');
+});
+
+
 /* Client*/

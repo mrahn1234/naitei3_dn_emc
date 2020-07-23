@@ -4,6 +4,7 @@ namespace App\Helpers;
 
 use App\Models\Category;
 use App\Models\Product;
+use Auth;
 
 class Helper
 {
@@ -21,6 +22,13 @@ class Helper
     public static function best_seller(){
         $best_seller = Product::orderBy('bought', 'desc')->offset(0)->limit(3)->get();
         return $best_seller;
+    }
+
+    public static function my_order(){
+        if(Auth::check() && Auth::user()->orders()){
+            $order = Auth::user()->orders()->get()->last();
+            return $order;
+        }
     }
 
 }
