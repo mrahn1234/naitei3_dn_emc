@@ -27,14 +27,16 @@
         <div class="container py-xl-4 py-lg-2">
 
             <div class="row">
-                <!-- product left -->
+
+                @include('client.layouts.shared.slidebar')
+
+                <!-- product right -->
                 <div class="agileinfo-ads-display col-lg-9">
                     <div class="wrapper">
                         @yield('content')
                     </div>
                 </div>
-                <!-- //product left -->
-                @include('client.layouts.shared.slidebar')
+                <!-- //product right -->
 
             </div>
         </div>
