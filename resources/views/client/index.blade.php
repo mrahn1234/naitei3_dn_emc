@@ -15,10 +15,8 @@
 	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
 	    rel="stylesheet">
     <!-- //web fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <link rel="stylesheet" href="{{asset('client/css/toastr.min.css')}}">
 
 </head>
 <body>
@@ -121,6 +119,8 @@
     <!-- pre-process -->
     <script src="{{asset('client/js/preprocess.js')}}"></script>
     <!-- //pre-process -->
+
+    <script src="{{asset('client/js/toastr.min.js')}}" ></script>
 
     <!-- custom js -->
     <script src={{mix('client/js/add_to_cart.js')}}></script>

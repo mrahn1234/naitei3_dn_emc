@@ -1,4 +1,4 @@
-<tr class="total">
+<tr>
     <th>{{1}}</th>
     <td>
         <img class="mr-2" src="{{asset('client/images/m2.jpg')}}" width="40px"alt="">

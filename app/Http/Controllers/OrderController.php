@@ -28,7 +28,7 @@ class OrderController extends Controller
             }
             return response()->json([
                 'message' => 'success',
-                'order' => $order,
+                'item' => $item->load('Product'),
             ], 200);
         }
         else return response()->json([

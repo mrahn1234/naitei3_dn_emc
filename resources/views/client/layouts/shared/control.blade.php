@@ -30,7 +30,7 @@
                             <button class="btn w3view-cart" data-toggle="modal" data-target="#modalCart">
                                 <i class="fas fa-cart-arrow-down shopping-cart "></i>
                                 <span id="cartNumber">
-                                    {{Auth::check() && Helper::my_order() ? Helper::my_order()->orderItems()->count() : ""}}
+                                    {{Auth::check() && Helper::my_order() && Helper::my_order()-> status === 3 ? Helper::my_order()->orderItems()->count() : "0"}}
                                 </span>
                             </button>
                         </div>
@@ -60,7 +60,7 @@
                                                 <th>Remove</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="my_order">
                                             @if (Auth::check() && Helper::my_order() && Helper::my_order()->status === 3 && Helper::my_order()->orderItems()->count() > 0)
                                                 @each('client.layouts.shared.order_item', Helper::my_order()->orderItems()->get()->load('Product'), 'item')
                                             @endif
