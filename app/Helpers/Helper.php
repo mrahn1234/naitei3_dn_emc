@@ -31,4 +31,20 @@ class Helper
         }
     }
 
+    public static function item_count($items){
+        $count = 0;
+        foreach($items as $item){
+            $count += $item->quantity;
+        }
+        return $count;
+    }
+
+    public static function total($order){
+        $total = 0;
+        foreach($order->orderItems()->get() as $item){
+            $total += $item->product()->get()[0]->price * $item->quantity;
+        }
+        return $total;
+    }
+
 }

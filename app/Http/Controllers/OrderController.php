@@ -92,4 +92,21 @@ class OrderController extends Controller
         }
     }
 
+    public function finish_order(Order $order){
+        if($order->ship_address === 'n/a' || $order->phone === 'n/a'){
+            $message = 'phone or address cannot be null';
+            return redirect(route('checkout', $order->id))->withErrors($message);
+        }
+        return view("client.orders.finish_order", compact('order'));
+    }
+
+    public function accept_order(Request $request){
+        $order = Order::find($request->order_id);
+        $order->status = 0;
+        $order->save();
+        return response()->json([
+            'message' =>  "success",
+        ], 200);
+    }
+
 }

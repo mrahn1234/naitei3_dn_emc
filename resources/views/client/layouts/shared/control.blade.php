@@ -69,9 +69,6 @@
 
                                 </div>
                                 <!--Footer-->
-                                <div>
-                                    <h4 style="float: right; margin-right:5% ">Total: $1000</h4>
-                                </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-outline-primary"
                                         data-dismiss="modal">Close</button>

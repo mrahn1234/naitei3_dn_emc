@@ -5,13 +5,22 @@
     <h2 class="mb-3 mt-3">{{trans("order.info")}}</h2>
     <div class="card">
         <div class="card-body">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <h5 class="card-title">{{$order_detail->user()->get()[0]->name}}</h5>
             <h6 class="card-subtitle mb-2 text-muted" id="txt-address">{{trans("order.address")}}{{": ".$order_detail->ship_address}}</h6>
             <h6 class="card-subtitle mb-2 text-muted" id="txt-phone">{{trans("order.phone")}}{{": "}}{{$order_detail->user()->get()[0]->phone? $order_detail->user()->get()[0]->phone : "n/a"}}</h6>
             <button class="btn btn-warning" onclick="toogle_form_address()">{{trans("order.edit")}}</button>
         </div>
         <hr>
-        <a href=""><button class="btn btn-success mb-2 mr-3 order-confirm">{{trans("order.next")}}</button></a>
+        <a href="{{route('finish_order', $order_detail->id)}}"><button class="btn btn-success mb-2 mr-3 order-confirm">{{trans("order.next")}}</button></a>
     </div>
 
     <div class="card mb-3 mt-3" id="ship-address">
