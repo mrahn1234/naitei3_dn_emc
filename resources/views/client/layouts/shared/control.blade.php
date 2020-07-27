@@ -75,7 +75,9 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-outline-primary"
                                         data-dismiss="modal">Close</button>
-                                    <button class="btn btn-primary">Checkout</button>
+                                        @if (Helper::my_order() && Helper::my_order()-> status === 3)
+                                            <a href="{{route('checkout', Helper::my_order()->id)}}"><button class="btn btn-primary">Checkout</button></a>
+                                        @endif
                                 </div>
                             </div>
                         </div>

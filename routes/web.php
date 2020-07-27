@@ -49,7 +49,12 @@ Route::group(['prefix' => 'products'], function(){
 
 Route::group(['prefix' => 'order'], function(){
     Route::post('/order-item', 'OrderController@orderItem')->name('order_item');
+    Route::post('/order-item/update-quantity', 'OrderController@updateQuantity')->name('update_quantity');
+    Route::post('/order-item/delete-item', 'OrderController@deleteItem')->name('delete_item');
+    Route::get('/order-item/{order}', 'OrderController@checkout')->name('checkout');
+    Route::post('/order-item/update_ship_address', 'OrderController@update_ship_address')->name('update_ship_address');
 });
+
 
 
 /* Client*/
