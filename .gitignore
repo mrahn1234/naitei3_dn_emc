@@ -3,6 +3,8 @@
 /public/storage
 /public/admin
 /public/client
+/resources/admin
+/resources/client
 /storage/*.key
 /vendor
 .env

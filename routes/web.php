@@ -21,7 +21,6 @@ Route::namespace('Client')->group(function() {
     Route::post('/','ClientRegisterController@register')->name('register');
     Route::get('/logout', 'Session@logout')->name('logout');
     Route::post('/login', 'Session@login')->name('login');
-Route::get('/home', 'HomeController@index')->name('home');
 });
 
 Route::get('/', 'ClientHomeController@index')->name('home');
