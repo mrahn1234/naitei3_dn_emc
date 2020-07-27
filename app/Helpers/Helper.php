@@ -47,4 +47,29 @@ class Helper
         return $total;
     }
 
+    public static function status($status){
+        switch($status){
+            case 0:
+                return "Pending";
+            case 1:
+                return "Accept";
+            case 2:
+                return "Decline";
+            default:
+                return "Exception";
+        }
+    }
+
+    public static function text_status($status){
+        switch($status){
+            case 0:
+                return "text-primary";
+            case 1:
+                return "text-success";
+            case 2:
+                return "text-danger";
+            default:
+                return "Exception";
+        }
+    }
 }

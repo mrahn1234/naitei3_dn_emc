@@ -55,6 +55,8 @@ Route::group(['prefix' => 'order'], function(){
     Route::post('/order-item/update_ship_address', 'OrderController@update_ship_address')->name('update_ship_address');
     Route::get('/order-item/finish-order/{order}', 'OrderController@finish_order')->name('finish_order');
     Route::post('/order-item/accept_order', 'OrderController@accept_order')->name('accept_order');
+    Route::get('/list-order/{user}', 'OrderController@list_order')->name('list_order');
+    Route::get('/list-order/{order}/detail', 'OrderController@order_detail')->name('order_detail');
 });
 
 

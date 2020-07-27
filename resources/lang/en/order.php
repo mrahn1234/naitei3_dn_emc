@@ -14,4 +14,10 @@
         'product_name' => 'Product name',
         'price_per_unit' => 'Price per unit',
         'total' => 'Total',
+        'date-order' => 'Date order',
+        'status' => 'Status',
+        'action' => 'Action',
+        'detail' => 'Detail',
+        'order_detail' => 'Order Detail',
+        'back' => 'Back',
     ];

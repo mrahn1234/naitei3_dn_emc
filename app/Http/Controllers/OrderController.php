@@ -109,4 +109,13 @@ class OrderController extends Controller
         ], 200);
     }
 
+    public function list_order(User $user){
+        $list_order = $user->orders()->where('status', '!=', 3)->orderBy('updated_at', 'desc')->get();
+        return view('client.orders.list_order', compact('list_order'));
+    }
+
+    public function order_detail(Order $order){
+        return view('client.orders.order_detail', compact('order'));
+    }
+
 }
