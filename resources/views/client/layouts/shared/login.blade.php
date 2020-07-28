@@ -9,14 +9,24 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="#" method="post">
+            <form action="{{route('login')}}" method="post">
+                @csrf
                     <div class="form-group">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <span>{{ $error }}</>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <label class="col-form-label">{{ trans('login.username') }}</label>
-                        <input type="text" class="form-control" placeholder=" " name="Name" required="">
+                            <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
                     </div>
                     <div class="form-group">
                         <label class="col-form-label">{{ trans('login.pw') }}</label>
-                        <input type="password" class="form-control" placeholder=" " name="Password" required="">
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                     </div>
                     <div class="right-w3l">
                         <input type="submit" class="form-control" value="Log in">
