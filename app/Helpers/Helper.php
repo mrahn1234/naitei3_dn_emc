@@ -72,4 +72,37 @@ class Helper
                 return "Exception";
         }
     }
+
+    public static function sort_comment($comments){
+        $collection_comment = collect();
+        foreach($comments as $c){
+            foreach($c->commentContents()->with('Comment')->get() as $ct){
+                $collection_comment->push($ct);
+            }
+        }
+        $collection_comment = $collection_comment->sortBy('created_at');
+        return $collection_comment;
+    }
+
+    public static function time_of_comment($updated_at){
+        $time = $updated_at->diff(now());
+        if($time->y > 0){
+            return $time->y." year(s) ago";
+        }
+        if($time->m > 0){
+            return $time->m." month(s) ago";
+        }
+        if($time->d > 0){
+            return $time->d." day(s) ago";
+        }
+        if($time->h > 0){
+            return $time->h." hour(s) ago";
+        }
+        if($time->i > 0){
+            return $time->i." minute(s) ago";
+        }
+        if($time->s > 0){
+            return $time->s." second(s) ago";
+        }
+    }
 }
