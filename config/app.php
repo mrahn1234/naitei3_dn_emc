@@ -231,4 +231,8 @@ return [
 
     ],
 
+    '_PAGINATION' => 9,
+    '_OFFSET' => 0,
+    '_LIMIT' => 3,
+
 ];

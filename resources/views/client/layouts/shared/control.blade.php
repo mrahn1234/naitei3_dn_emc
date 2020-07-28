@@ -17,8 +17,8 @@
                 <div class="row">
                     <!-- search -->
                     <div class="col-10 agileits_search">
-                        <form class="form-inline" action="#" method="post">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                        <form class="form-inline" action="{{route('search_product')}}" method="GET">
+                            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Product name or price..." aria-label="Search"
                                 required>
                             <button class="btn my-2 my-sm-0" type="submit">{{ trans('control.search') }}</button>
                         </form>
@@ -43,7 +43,7 @@
                             <div class="modal-content modal-custom" id="modalContent">
                                 <!--Header-->
                                 <div class="modal-header">
-                                    <h4 class="modal-title" id="myModalLabel">Your cart</h4>
+                                    <h4 class="modal-title" id="myModalLabel">{{trans('order.your-cart')}}</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">×</span>
                                     </button>
@@ -53,11 +53,11 @@
                                     <table class="table table-hover">
                                         <thead>
                                             <tr>
-                                                <th>No.</th>
-                                                <th>Product name</th>
-                                                <th>Quanity</th>
-                                                <th>Price</th>
-                                                <th>Remove</th>
+                                                <th>{{trans('order.no')}}</th>
+                                                <th>{{trans('order.product_name')}}</th>
+                                                <th>{{trans('order.quantity')}}</th>
+                                                <th>{{trans('order.price')}}</th>
+                                                <th>{{trans('order.remove')}}</th>
                                             </tr>
                                         </thead>
                                         <tbody id="my_order">
@@ -71,9 +71,9 @@
                                 <!--Footer-->
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-outline-primary"
-                                        data-dismiss="modal">Close</button>
+                                        data-dismiss="modal">{{trans('order.close')}}</button>
                                         @if (Helper::my_order() && Helper::my_order()-> status === 3)
-                                            <a href="{{route('checkout', Helper::my_order()->id)}}"><button class="btn btn-primary">Checkout</button></a>
+                                            <a href="{{route('checkout', Helper::my_order()->id)}}"><button class="btn btn-primary">{{trans('order.checkout')}}</button></a>
                                         @endif
                                 </div>
                             </div>

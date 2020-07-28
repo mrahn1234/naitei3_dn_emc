@@ -59,6 +59,9 @@ Route::group(['prefix' => 'order'], function(){
     Route::get('/list-order/{order}/detail', 'OrderController@order_detail')->name('order_detail');
 });
 
+Route::group(['prefix' => 'controls'], function () {
+    Route::get('/search-product', 'SearchController@search_product')->name('search_product');
+});
 
 
 /* Client*/

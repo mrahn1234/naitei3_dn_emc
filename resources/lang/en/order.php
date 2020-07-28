@@ -20,4 +20,11 @@
         'detail' => 'Detail',
         'order_detail' => 'Order Detail',
         'back' => 'Back',
+        'your-cart' => 'Your cart',
+        'no' => 'No.',
+        "quantity" => "Quantity",
+        "price" => "Price",
+        "remove" => "Remove",
+        "close" => "Close",
+        "checkout" => "Checkout",
     ];
