@@ -136,8 +136,12 @@
     <div class="container">
         <div class="card mt-3 mb-3">
             <div class="card-body">
-                <div class="row">
-                    @each('client.comments.comment_content', $collection_comment, 'comment_content')
+                <div id="comment-containter">
+                    @if (!$collection_comment->isEmpty())
+                        @each('client.comments.comment_content', $collection_comment, 'comment_content')
+                    @else
+                        <h5>{{trans('comment.comment-yet')}}</h5>
+                    @endif
                 </div>
             </div>
         </div>
@@ -148,7 +152,7 @@
                         <label class="col-form-label">{{"Please review something this product!"}}</label>
                         <textarea class="form-control" id="comment-content" name="comment" cols="50" rows="3"></textarea>
                         <p>
-                            <button type="submit" onclick="postComment({{Auth::user()->id}}, {{$product->id}})" id='submit-comment' class="float-right text-light btn btn-success ml-2 mt-2 mb-2"> <i class="fa fa-comments"></i> Comment</button>
+                            <button type="submit" onclick="postComment({{Auth::user()->id}}, {{$product->id}})" id='submit-comment' class="float-right text-light btn btn-success ml-2 mt-2 mb-2"> <i class="fa fa-comments"></i>{{trans('comment.comment')}}</button>
                         </p>
                     </form>
                 </div>

@@ -80,12 +80,12 @@ class Helper
                 $collection_comment->push($ct);
             }
         }
-        $collection_comment = $collection_comment->sortBy('created_at');
+        $collection_comment = $collection_comment->sortByDesc('created_at');
         return $collection_comment;
     }
 
-    public static function time_of_comment($updated_at){
-        $time = $updated_at->diff(now());
+    public static function time_of_comment($created_at){
+        $time = $created_at->diff(now());
         if($time->y > 0){
             return $time->y." year(s) ago";
         }
@@ -101,7 +101,7 @@ class Helper
         if($time->i > 0){
             return $time->i." minute(s) ago";
         }
-        if($time->s > 0){
+        if($time->s >= 0){
             return $time->s." second(s) ago";
         }
     }

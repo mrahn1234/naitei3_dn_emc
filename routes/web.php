@@ -63,5 +63,10 @@ Route::group(['prefix' => 'controls'], function () {
     Route::get('/search-product', 'SearchController@search_product')->name('search_product');
 });
 
+Route::group(['prefix' => 'comments'], function () {
+    Route::post('/create', 'CommentController@store_comment')->name('create_comment');
+    Route::post('/delete', 'CommentController@delete_comment')->name('delete_comment');
+    Route::post('/update', 'CommentController@update_comment')->name(('update_comment'));
+});
 
 /* Client*/
