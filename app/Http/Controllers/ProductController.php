@@ -55,4 +55,9 @@ class ProductController extends Controller
 
         return view('client.products.product_accord_category', compact('products', 'price_actual'));
     }
+
+    public function show(Product $product){
+        return view('client.products.product_details', compact('product'));
+    }
+
 }

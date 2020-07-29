@@ -41,6 +41,7 @@ Route::namespace('Client')->group(function() {
 Route::group(['prefix' => 'products'], function(){
     Route::get('/product-accord-category/{category}', 'ProductController@product_accord_category')->name('pro_accord_cate');
     Route::get('/product-accord-price/{parameter}', 'ProductController@product_accord_price')->name('pro_accord_price');
+    Route::get('/{product}', 'ProductController@show')->name('product_detail');
 });
 
 /* Client*/
