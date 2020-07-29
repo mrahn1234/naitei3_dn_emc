@@ -16,11 +16,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
     </script>
     <!-- bootstrap-css -->
-    <link rel="stylesheet" href="{{asset('admin/css/bootstrap.min.css')}}">
-    <!-- //bootstrap-css -->
-    <!-- Custom CSS -->
-    <link href="{{asset('admin/css/style.css')}}" rel='stylesheet' type='text/css' />
-    <link href="{{asset('admin/css/style-responsive.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{mix('admin/css/admin.css')}}" type="text/css">
     <!-- font CSS -->
     <link
         href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
@@ -45,12 +41,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     </section>
     <script src="{{asset('admin/js/bootstrap.js')}}"></script>
-    <script src="{{asset('admin/js/jquery.dcjqaccordion.2.7.js')}}"></script>
-    <script src="{{asset('admin/js/scripts.js')}}"></script>
-    <script src="{{asset('admin/js/jquery.slimscroll.js')}}"></script>
-    <script src="{{asset('admin/js/jquery.nicescroll.js')}}"></script>
+    <script src="{{mix('admin/js/jquery.dcjqaccordion.2.7.js')}}"></script>
+    <script src="{{mix('admin/js/scripts.js')}}"></script>
+    <script src="{{mix('admin/js/jquery.slimscroll.js')}}"></script>
+    <script src="{{mix('admin/js/jquery.nicescroll.js')}}"></script>
     <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-    <script src="{{asset('admin/js/jquery.scrollTo.js')}}"></script>
+    <script src="{{mix('admin/js/jquery.scrollTo.js')}}"></script>
 </body>
 
 </html>
+

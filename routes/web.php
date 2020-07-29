@@ -23,6 +23,13 @@ Auth::routes();
 
 Route::group(['prefix'=>'admin-page'],function(){
     Route::get('/', 'AdminHomeController@index');
+    Route::get('/user', 'Admin\UsersController@index')->name('manage_users');
+    Route::get('user/show/{id?}', 'Admin\UsersController@show')->name('show_users');
+    Route::get('/user/create', 'Admin\UsersController@create')->name('create_users');
+    Route::post('/user/store', 'Admin\UsersController@store')->name('store_users');
+    Route::get('user/edit/{id?}', 'Admin\UsersController@edit')->name('edit_users');
+    Route::post('user/update/{id?}', 'Admin\UsersController@update')->name('update_users');
+    Route::get('user/delete/{id?}', 'Admin\UsersController@destroy')->name('delete_users');
 });
 
 /* Admin */

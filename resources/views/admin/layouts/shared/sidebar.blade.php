@@ -16,7 +16,7 @@
                         <span>{{ trans('sidebar.data') }}</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="basic_table.html">{{ trans('sidebar.mUser') }}</a></li>
+                        <li><a href="{{ route('manage_users') }}">{{ trans('sidebar.mUser') }}</a></li>
                         <li><a href="basic_table.html">{{ trans('sidebar.mCategory') }}</a></li>
                         <li><a href="basic_table.html">{{ trans('sidebar.mProduct') }}</a></li>
                         <li><a href="basic_table.html">{{ trans('sidebar.mListOrder') }}</a></li>
