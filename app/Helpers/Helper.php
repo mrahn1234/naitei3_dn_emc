@@ -105,4 +105,16 @@ class Helper
             return $time->s." second(s) ago";
         }
     }
+
+    public static function avr_score(Product $product){
+        $count = $product->ratings()->count();
+        if($count > 0){
+            $avr = 0;
+            foreach($product->ratings()->get() as $r){
+                $avr += $r->rating_star;
+            }
+            return intval($avr/$count);
+        }
+        return 0;
+    }
 }

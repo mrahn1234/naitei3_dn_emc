@@ -12,7 +12,7 @@
         </p>
         <div class="clearfix"></div>
         <p id={{"content-update".$comment_content->id}}>{{$comment_content->content}}</p>
-        @if (Auth::user()->id === $comment_content->comment->user->id)
+        @if (Auth::check() && Auth::user()->id === $comment_content->comment->user->id)
         <p>
             <a class="float-right btn btn-outline-primary ml-2" onclick="toogleEditCommentForm({{$comment_content->id}}, '{{$comment_content->content}}')">
                 <i class="fa fa-edit"></i>

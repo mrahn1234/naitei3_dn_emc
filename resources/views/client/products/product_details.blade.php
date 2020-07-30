@@ -91,6 +91,25 @@
                             <h6 class="remaining">{{ trans('product_detail.Remaining:') }} </h6>
                             <b>{{$product->quantity}}</b>
                         </li>
+                        <li class="mb-3">
+                            <ul id="stars" value="{{$rating_score}}">
+                                <li id="s1" class="mb-3 star" value="1" onclick="rating(event, {{Auth::check()? Auth::user()->id : null}})">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </li>
+                                <li id="s2" class="mb-3 star" value="2" onclick="rating(event, {{Auth::check()? Auth::user()->id : null}})">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </li>
+                                <li id="s3" class="mb-3 star" value="3" onclick="rating(event, {{Auth::check()? Auth::user()->id : null}})">
+                                    <i class="fa fa-star" aria-hidden="true" ></i>
+                                </li>
+                                <li id="s4" class="mb-3 star" value="4" onclick="rating(event, {{Auth::check()? Auth::user()->id : null}})">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </li>
+                                <li id="s5" class="mb-3 star" value="5" onclick="rating(event, {{Auth::check()? Auth::user()->id : null}})">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 <div class="product-single-w3l">

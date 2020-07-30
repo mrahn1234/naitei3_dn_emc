@@ -123,6 +123,7 @@
     <!-- custom js -->
     <script src={{mix('client/js/add_to_cart.js')}}></script>
     <script src={{mix('client/js/comment_product.js')}}></script>
+    <script src={{mix('client/js/rating_product.js')}}></script>
     <!-- //custom js -->
 </body>
 
