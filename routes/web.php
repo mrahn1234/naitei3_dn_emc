@@ -69,4 +69,8 @@ Route::group(['prefix' => 'comments'], function () {
     Route::post('/update', 'CommentController@update_comment')->name(('update_comment'));
 });
 
+Route::group(['prefix' => 'ratings'], function () {
+    Route::post('/rating', 'RatingController@rating')->name('rating');
+});
+
 /* Client*/

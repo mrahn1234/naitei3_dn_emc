@@ -58,8 +58,8 @@ class ProductController extends Controller
     public function show(Product $product){
         $comments = $product->comments()->with('User')->get();
         $collection_comment = Helper::sort_comment($comments);
-        // dd($collection_comment[0]->comment()->get()[0]->user()->get());
-        return view('client.products.product_details', compact('product', 'collection_comment'));
+        $rating_score = Helper::avr_score($product);
+        return view('client.products.product_details', compact('product', 'collection_comment', 'rating_score'));
     }
 
 }
